@@ -1,12 +1,31 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>Sunny Lane Uploader · authorisation</title>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <main>
   <h1>Authorisation received</h1>
-  <p>You can close this tab and go back to the tool.</p>
-  <p>This page is the redirect target for Sunny Lane Uploader. It stores nothing and sends nothing
-     anywhere. The authorisation code stays in your browser's address bar, where the operator copies it
-     into the tool on their own machine.</p>
+  <p>Paste this one-time code into the Sunny Lane Publisher on your computer.</p>
+
+  <p id="codebox" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;line-height:1.5;
+     word-break:break-all;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);
+     border-radius:10px;padding:14px 16px;max-width:760px">Looking for the code…</p>
+
+  <p><button id="copy" style="font:inherit;font-weight:700;padding:10px 20px;border:0;
+     border-radius:9px;background:#f0a92b;color:#241c14;cursor:pointer">Copy the code</button>
+     <span id="done" style="margin-left:12px"></span></p>
+
+  <p>The code works once and expires quickly. This page stores nothing and sends nothing anywhere:
+     the code is read from the address bar by your own browser, and the publisher exchanges it for a
+     token that never leaves your computer.</p>
   <p><a href="./">Back to Sunny Lane Cartoons</a></p>
 </main>
+<script>
+  var code = new URLSearchParams(location.search).get('code') || '';
+  var box  = document.getElementById('codebox');
+  box.textContent = code || 'No code in the address bar. Start again from the Connect page.';
+  document.getElementById('copy').onclick = function () {
+    navigator.clipboard.writeText(code).then(function () {
+      document.getElementById('done').textContent = 'Copied.';
+    });
+  };
+</script>
