@@ -42,10 +42,10 @@ footer a{color:var(--muted)}
 .btn{display:inline-block;background:#fe2c55;color:#fff;padding:.7rem 1.2rem;border-radius:8px;
      text-decoration:none;font-weight:600}
 .btn:hover{background:#e0264b}
-.film{border:1px solid #ddd;border-radius:10px;padding:1rem;margin:1rem 0;background:#fafafa}
-.film-name{font-weight:700;font-size:1.1rem}
+.film{border:1px solid #ddd;border-radius:10px;padding:1rem;margin:1rem 0;background:#fafafa;color:#1a1a2e}
+.film-name{font-weight:700;font-size:1.1rem;color:#1a1a2e}
 .film-meta{color:#666;font-size:.9rem;margin-bottom:.6rem}
 .film textarea{width:100%;box-sizing:border-box;font:inherit;padding:.5rem;border:1px solid #ccc;
-     border-radius:6px;background:#fff}
+     border-radius:6px;background:#fff;color:#1a1a2e}
 .film label{display:block;font-size:.85rem;color:#666;margin:.5rem 0 .2rem}
 .small{font-size:.85rem;color:#666;margin-top:2rem}
