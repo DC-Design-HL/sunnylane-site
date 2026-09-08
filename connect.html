@@ -29,6 +29,9 @@
       + "&scope="         + encodeURIComponent(SCOPES)
       + "&response_type=code"
       + "&redirect_uri="  + encodeURIComponent(REDIRECT)
-      + "&state="         + encodeURIComponent(state);
+      + "&state="         + encodeURIComponent(state)
+      // ⚠️ Without this TikTok SKIPS its own permission screen for an account that has
+      // already granted access, and the app-review demo video then shows no consent at all.
+      + "&disable_auto_auth=1";
   });
 </script>
